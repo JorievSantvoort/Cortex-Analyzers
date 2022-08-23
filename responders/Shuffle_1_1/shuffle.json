@@ -1,0 +1,57 @@
+{
+  "name": "Shuffle_1_1",
+  "version": "1.1",
+  "author": "@frikkylikeme",
+  "url": "https://github.com/frikky/shuffle",
+  "license": "AGPL-V3",
+  "description": "Execute a workflow in Shuffle",
+  "dataTypeList": ["thehive:case", "thehive:alert", "thehive:case_task_log"],
+  "command": "Shuffle_1_1/shuffle.py",
+  "baseConfig": "Shuffle_1_1",
+  "configurationItems": [
+    {
+      "name": "url",
+      "description": "The URL to your shuffle instance",
+      "type": "string",
+      "multi": false,
+      "required": true,
+      "defaultValue": "https://shuffler.io"
+    },
+		{
+      "name": "api_key",
+      "description": "The API key to your Shuffle user",
+      "type": "string",
+      "multi": false,
+      "required": false
+    },
+    {
+      "name": "workflow_id",
+      "description": "The ID of the workflow to execute",
+      "type": "string",
+      "multi": false,
+      "required": false
+    },
+    {
+      "name": "use_webhook_mode",
+      "description": "If true, sends TheHive input data to webhook, \n if false uses workflow execute mode",
+      "type": "boolean",
+      "multi": false,
+      "required": true,
+      "defaultValue": false
+    },
+    {
+      "name": "webhook_URI",
+      "description": "The URL of the webhook",
+      "type": "string",
+      "multi": false,
+      "required": false
+    },
+    {
+      "name": "authentication_headers",
+      "description": "auth headers",
+      "type": "string",
+      "multi": true,
+      "required": false
+    }
+  ]
+}

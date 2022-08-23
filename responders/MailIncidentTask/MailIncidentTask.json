@@ -1,0 +1,68 @@
+{
+  "name": "MailIncidentTask",
+  "version": "1.0",
+  "author": "Jorie van Santvoort",
+  "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
+  "license": "AGPL-V3",
+  "description": "Send an email with information from a TheHive task or tasklog",
+  "dataTypeList": ["thehive:case", "thehive:case_task", "thehive:case_task_log"],
+  "command": "MailIncidentTask/MailIncidentTask.py",
+  "baseConfig": "MailIncidentTask",
+  "configurationItems": [
+    {
+      "name": "from",
+      "description": "email address from which the mail is send",
+      "type": "string",
+      "multi": false,
+      "required": true
+    },
+    {
+      "name": "smtp_host",
+      "description": "SMTP server used to send mail",
+      "type": "string",
+      "multi": false,
+      "required": true,
+      "defaultValue": "localhost"
+    },
+    {
+      "name": "smtp_port",
+      "description": "SMTP server port",
+      "type": "number",
+      "multi": false,
+      "required": true,
+      "defaultValue": 25
+    },
+    {
+      "name": "smtp_user",
+      "description": "SMTP server user",
+      "type": "string",
+      "multi": false,
+      "required": false,
+      "defaultValue": "user"
+    },
+    {
+      "name": "smtp_pwd",
+      "description": "SMTP server password",
+      "type": "string",
+      "multi": false,
+      "required": false,
+      "defaultValue": "pwd"
+    },
+    {
+      "name": "taskgroup_name",
+      "description": "Task E-mail Group name",
+      "type": "string",
+      "multi": false,
+      "required": true,
+      "defaultValue": "MAIL"
+    },
+    {
+      "name": "use_case_title",
+      "description": "Uses the main case title, if false uses the task title as subject",
+      "type": "boolean",
+      "multi": false,
+      "required": true,
+      "defaultValue": true
+    }
+  ]
+}
